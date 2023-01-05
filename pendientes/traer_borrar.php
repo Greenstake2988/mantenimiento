@@ -79,8 +79,8 @@ tinyMCE.init({
 		$consulta=mysql_query( "SELECT folio,anio_folio,tipo_manto,servicio,fecha_realizacion,trabajo_realizado,materiales_usados from orden_mantenimiento where folio='$buscar_folio' and anio_folio='$buscar_anio' and solicita_a='cc'",$enchufarsolicitudes);
 	
 	if (mysql_num_rows($consulta)==''){
-	header('refresh: 2; url=form_busca_modificar.php');
-	echo "<center>No Se ha encontrado el número de Folio</center>"; exit();}
+	header('refresh: 2; url=form_busca_borrar.php');
+	echo "<center>No Se ha encontrado el nï¿½mero de Folio</center>"; exit();}
 else 
 {
 	
@@ -94,7 +94,7 @@ while($folio = mysql_fetch_array($consulta)){
 	$trabajo_realizado=$folio['trabajo_realizado'];
 	$materiales_usados=$folio['materiales_usados'];
 
-  //buscamos usuarios computo
+/*   //buscamos usuarios computo
    include("../../conexion/enchufarusuarios.php");
    
    $consultau=mysql_query("SELECT * FROM usuarios INNER JOIN area on usuarios.id_area=area.id_area where id_usuario='$id_usuario'",$enchufarusuarios)or die(mysql_error());
@@ -107,7 +107,7 @@ while($folio = mysql_fetch_array($consulta)){
     $descripcion=$usuarios['descripcion'];
 	 $id_area=$usuarios['id_area'];
 	$id_usuario=$usuarios['id_usuario'];
-   $nombre_completo=$nombres.' '.$apellidop.' '.$apellidom;
+   $nombre_completo=$nombres.' '.$apellidop.' '.$apellidom; */
       }
   }
  }
@@ -120,7 +120,7 @@ while($folio = mysql_fetch_array($consulta)){
 	
 	if (mysql_num_rows($consulta1)==''){
 	header('refresh: 2; url=form_busca_modificar.php');
-	echo "<center>No Se ha encontrado el número de Folio</center>"; exit();}
+	echo "<center>No Se ha encontrado el nï¿½mero de Folio</center>"; exit();}
 	else 
 {
 while($folio = mysql_fetch_array($consulta1)){
@@ -165,7 +165,7 @@ while($folio = mysql_fetch_array($consulta1)){
               <td>&nbsp;</td>
               <td><div align="center">FECHA</div></td>
 
-              <td><input name="fecha_solicitud" type="text"   value="<?php echo $fecha_solicitud;?>" size="10" readonly="" /></td>
+              <td><input name="fecha_solicitud" type="text"   value="<?php echo $fecha_realizacion;?>" size="10" readonly="" /></td>
             </tr>
             <tr>
               <td width="200">Recursos Materiales y Servicios </td>
@@ -180,9 +180,10 @@ while($folio = mysql_fetch_array($consulta1)){
               <td><input name="solicita_a" type="radio" disabled="disabled" value="me" /></td>
               <td>&nbsp;</td>
               <td><label>
+              /* AQUI MOVIMOS EL USARIO */
               <input name="id_usuario" type="hidden"   value="<?php echo $id_usuario;?>" size="10" readonly="" />
               </label></td>
-            </tr>
+            </tr>:
             <tr>
               <td>Centro de C&oacute;mputo </td>
               <td><input name="solicita_a" type="radio" value="cc"  <?php if($_SESSION['sol']=='cc'){echo " checked='checked'";}else{echo "disabled='disabled'";}  ?>  /></td>
@@ -210,6 +211,7 @@ while($folio = mysql_fetch_array($consulta1)){
           <p>
 		  <div align="center">
             <textarea name="falla" cols="50" rows="5" ><?php echo $falla;?></textarea>
+            <textarea name="mat_usa" cols="50" row="5" ><?php echo "hola";?></textarea>
           </div>  
           </p>
           <p>
