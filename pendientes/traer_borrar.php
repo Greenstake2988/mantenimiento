@@ -181,7 +181,6 @@ while($folio = mysql_fetch_array($consulta1)){
               <td><input name="solicita_a" type="radio" disabled="disabled" value="me" /></td>
               <td>&nbsp;</td>
               <td><label>
-              /* AQUI MOVIMOS EL USARIO */
               <input name="id_usuario" type="hidden"   value="<?php echo $id_usuario;?>" size="10" readonly="" />
               </label></td>
             </tr>:
@@ -195,7 +194,7 @@ while($folio = mysql_fetch_array($consulta1)){
 		  <br />
           <table width="491" border="0" class="tabla" align="center">
             <tr>
-              <td width="130">&Aacute;rea Solicitante : </td>
+              <td width="130">Asignado a : </td>
               <td width="341"><label>
                 <input type="text" name="area" readonly="" size="45" value="<?php echo $descripcion;?>" />
               </label></td>
@@ -211,8 +210,8 @@ while($folio = mysql_fetch_array($consulta1)){
           <p align="center" class="textpie">Descripci&oacute;n del Servicio Solicitado o Falla a Reparar:</p>
           <p>
 		  <div align="center">
-            <textarea name="falla" cols="50" rows="5" ><?php echo $falla;?></textarea>
-            <textarea name="mat_usa" cols="50" row="5" ><?php echo "hola";?></textarea>
+            <textarea name="falla" cols="50" rows="5" ><?php echo $trabajo_realizado;?></textarea>
+            <textarea name="mat_usa" cols="50" row="5" ><?php echo $materiales_usados;?></textarea>
           </div>  
           </p>
           <p>
