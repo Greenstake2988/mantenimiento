@@ -80,7 +80,9 @@ tinyMCE.init({
 	
 	if (mysql_num_rows($consulta)==''){
 	header('refresh: 2; url=form_busca_borrar.php');
-	echo "<center>No Se ha encontrado el n�mero de Folio</center>"; exit();}
+  echo $buscar_folio;
+	echo "<center>No Se ha encontrado el n�mero de Folio</center>"; exit();
+  }
 else 
 {
 	
