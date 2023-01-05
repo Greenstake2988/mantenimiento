@@ -149,7 +149,7 @@ while($folio = mysql_fetch_array($consulta1)){
  }
  		
 		?>
-          <p align="center" class="caption">&quot;Modificaci&oacute;n de Mantenimiento Correctivo&quot;</p>
+          <p align="center" class="caption">&quot;Eliminar Pendiente&quot;</p>
           <p align="center">&nbsp; </p>
           <table width="490" border="0" align="center" class="tabla">
             <tr>
@@ -194,13 +194,13 @@ while($folio = mysql_fetch_array($consulta1)){
 		  <br />
           <table width="491" border="0" class="tabla" align="center">
             <tr>
-              <td width="130">Asignado a : </td>
+              <td width="130">Tipo de Servicio : </td>
               <td width="341"><label>
                 <input type="text" name="area" readonly="" size="45" value="<?php echo $descripcion;?>" />
               </label></td>
             </tr>
             <tr>
-              <td>Nombre del Solicitante: </td>
+              <td>Asignado a : </td>
               <td><input name="nombre_completo" type="text" id="nombre_completo" readonly="" value="<?php echo $nombre_completo;?>" size="45" /></td>
             </tr>
           </table>
