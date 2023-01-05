@@ -1,0 +1,87 @@
+<?php
+//require("../../sesion/proteccion.php");
+//session_start();
+	 
+?><head>
+
+<link href="estilos_css.css" rel="stylesheet" type="text/css" />
+<link href="menu.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+<script language="javascript">
+function confirmar(mensaje)
+{
+ return confirm(mensaje);
+}
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /><style type="text/css">
+<!--
+a:link {
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+a:active {
+	text-decoration: none;
+}
+.Estilo1 {color: #FFFFFF}
+-->
+</style></head>
+ <form>      <?php
+$buscarpor=$_POST['buscarpor'];
+
+include("../../conexion/enchufarsolicitudes.php");
+include("../../conexion/enchufarusuarios.php");
+
+$result=mysql_query( "select * from mantenimiento_iso.memorandum,usuarios.usuarios  where  memorandum.id_usuario=usuarios.id_usuario and memorandum.id_usuario=".$buscarpor."");
+
+while($row=mysql_fetch_array($result))
+{
+$id_reporte=$row[0];
+$fecha_expedicion=$row[1];
+$area_reportada=$row[3];
+$observaciones=$row[6];
+$nombre_completo=$row[11].' '.$row[12].' '.$row[13].' '.$row[14]
+?>
+<br />
+<table width="376" border="0" align="center" class="tabla">
+   
+  <tr>
+    <td>Fecha Expedici&ograve;n </td><input type="hidden" name="id_reporte" readonly="" value="<?php echo $id_reporte;?>" size="30" />
+    <td><input type="text" name="fecha_expedicion" readonly="" value="<?php echo $fecha_expedicion;?>" size="30" /></td>
+  </tr>
+  <tr>
+       <td width="116">Docente</td>
+      <td width="250"><input name="id_usuario" value="<?php echo $nombre_completo;?>" type="text" size="30" id="id_usuario" readonly=""  /></td>
+  </tr>
+     
+  <tr>
+       <td>Area Reportada</td>
+       <td><input name="area" value="<?php echo $area_reportada; ?>" type="text" size="30" id="area" readonly="" /></td>
+  </tr>
+  <tr>
+    <td>Observaciones</td>
+    <td><textarea name="observaciones" readonly="readonly"><?php echo $observaciones;?></textarea></td>
+  </tr>
+ </table>
+ 
+   
+<table width="376" border="0" align="center" class="tabla">
+    <tr>
+      <td width="76">&nbsp;</td>  
+      <td width="86"><a href="eliminar_memorandum.php?id_reporte="<?php echo $id_reporte;?> " onclick="return confirmar('Esta Seguro de Eliminar Este Memorandum');"><img src="../../imagenes/eliminar.png" width="32" height="32"  align="right" style="cursor: pointer;;" longdesc="Eliminar Memorandum"  onmouseover="this.style.background='#FFFFFF';" onmouseout="this.style.background=''"/></a></td>
+      
+	  <td width="20">&nbsp;</td>
+      <td width="176"><a href="reimprimir_memorandum.php" onclick="return confirmar('Esta Seguro de Modificar Este Registro');"><img src="../../imagenes/printer.png" style="cursor: pointer;;" onmouseover="this.style.background='#FFFFFF';" onmouseout="this.style.background=''" longdesc="Modificar Equipo"/></a></td>
+    </tr>
+  </table>
+ </form>
+  <?php
+  
+  }
+//mysql_free_result($result);
+?>
+

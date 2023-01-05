@@ -1,0 +1,66 @@
+/* CSS Document */
+
+body {min-width:690px}
+
+#header,#menu,#content,#sub-seccion,#footer {
+overflow:hidden;
+display:inline-block;
+}
+
+#maqueta {
+width:760px;
+margin-right:auto;
+margin-left:auto;
+}
+/*Safari y Opera*/
+
+#header,#footer {
+width:100%;
+color:#FFFFFF;
+text-align:center;
+background-color:#9A0201;
+}
+#menu,#contenido,#sub-seccion {float:left}
+#menu {width:21%}
+#contenido {width:60%}
+#contenido_sin_menu {width:100%}
+#sub-seccion {width:19%}
+#footer {clear:left}
+
+.cuadrito {
+	background-color: #EFE4D2;
+	border: thin solid #990000;
+
+}
+
+.titulos {
+color:#660000;
+text-align:center;
+font-size:24px;
+text-transform:capitalize;
+}
+
+.titulos_extras {
+color:#660000;
+text-align:center;
+font-size:18px;
+font-weight:bold;
+}
+
+.otras_letras {
+font-weight:bold;
+color:#660000;
+}
+.titulos {
+color:#660000;
+text-align:center;
+font-size:24px;
+text-transform:capitalize;
+}
+
+.titulos_extras {
+color:#660000;
+text-align:center;
+font-size:18px;
+font-weight:bold;
+}

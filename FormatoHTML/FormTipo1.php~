@@ -1,0 +1,221 @@
+<?php
+ session_start();
+require("../sesion/proteccion.php");
+
+?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head  >
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title></title>
+<link href="css.css" rel="stylesheet" type="text/css" />
+</head>
+<script language="JavaScript">
+function Abrir_ventana (pagina) {
+var opciones="toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, width=500, height=375, top=85, left=140";
+window.open(pagina,"",opciones);
+}
+</script>
+
+<script> 
+function window.onbeforeprint(){ 
+noprint.style.visibility = 'hidden'; 
+noprint.style.position = 'absolute';
+}
+function window.onafterprint(){ 
+noprint.style.visibility = 'visible'; 
+noprint.style.position = 'relative'; 
+}
+</script> 
+
+<body onload="Abrir_ventana('../popup/popup.php');" >
+
+
+<center><form name="formato" method="post">
+
+  <div align="right"><?php 
+	$folio=$_POST['folio'];
+	$año=$_POST['año'];
+	$fecha_solicitud= $_POST['fecha_solicitud'];
+	$solicita_a=$_POST['solicita_a'];
+	$marca_x="X";
+	$area= $_POST['area'];
+	$nombre= $_POST['nombre'];
+	$falla= $_POST['falla'];
+
+include('../conexion/enchufarusuarios.php');
+		$consulta= mysql_query("SELECT id_area,descripcion FROM area where id_area=$area",$enchufarusuarios) 
+or die ('Error en la conexioacute;con  el gestor al leer'); 
+ $array_area = mysql_fetch_row($consulta);
+ 
+include('../conexion/enchufarusuarios.php');
+		$consulta= mysql_query("SELECT id_usuario,nombres,apellidop,apellidom FROM usuarios where id_usuario=$nombre",$enchufarusuarios) 
+or die ('Error en la conexioacute;con  el gestor al leer');  
+ $array_nombre = mysql_fetch_row($consulta);
+ 
+	 $nombres=$array_nombre[1];
+	 $apellidop=$array_nombre[2];
+	 $apellidom=$array_nombre[3];
+	 $nom_completo=$nombres.' '.$apellidop.' '.$apellidom;
+	 
+	 include("../conexion/enchufarsolicitudes.php");
+//compruebo si el equipo no ha sido dado de alta antes
+
+if($_SESSION['sol']=='cc'){
+  $validar="select  * from solicitudes where  folio='$folio'";
+  $resultado= mysql_query($validar,$enchufarsolicitudes);
+     if (mysql_num_rows($resultado)!=0)
+          {
+				echo"<br>";
+				echo"<br>";
+				echo"<br>";
+				echo"<br>";
+				echo "<center>Lo Siento Este FOLIO Ya Existe,¡Intente de Nuevo!</center><br>";
+				echo'<a href="../solicitar/form_solicita_manto.php"><center>volver</center></a>';
+           }
+else
+	{
+	$result= mysql_query("insert into solicitudes (folio,año_folio,fecha,solicita_a,id_area,id_usuario,falla_reparar) 		values('$folio','$año','$fecha_solicitud','$solicita_a','$area','$nombre','$falla')",$enchufarsolicitudes) or die ("error al Guardar");
+
+	echo'
+		<table>
+			  <tr>
+		    	 <td id="noprint"> 
+		        	<input name="imprimir" type="button" onClick="window.print();" value="Imprimir"></input>
+		      	 </td>
+		  	  </tr>
+		</table>';
+
+  	}
+ }
+//comprobando para recursos materiales
+else{
+ 		if($_SESSION['sol']=='rms'){
+ 
+ 			$validar="select  * from solicitudes where  folio='$folio' and solicita_a<>'cc'";
+			$resultado= mysql_query($validar,$enchufarsolicitudes);
+				if (mysql_num_rows($resultado)!=0)
+						{
+							echo"<br>";
+							echo"<br>";
+							echo"<br>";
+							echo"<br>";
+							echo "<center>Lo Siento Este FOLIO Ya Existe,¡Intente de Nuevo!</center><br>";
+							echo'<a href="../solicitar/form_solicita_manto.php"><center>volver</center></a>';
+						}
+			else
+				{
+					$result= mysql_query("insert into solicitudes (folio,año_folio,fecha,solicita_a,id_area,id_usuario,falla_reparar) values('$folio','$año','$fecha_solicitud','$solicita_a','$area','$nombre','$falla')",$enchufarsolicitudes) or die ("error al Guardar");
+
+					echo'
+							<table>
+								<tr>
+		   							<td id="noprint"> 
+		      							<input name="imprimir" type="button" onClick="window.print();" value="Imprimir"></input>
+		   							 </td>
+								</tr>
+							</table>';
+
+ 				} 
+ 
+ 		}
+ }
+
+ ?>
+  </div>
+  <table width="654" height="654" align="center">
+  <tr>
+    <td colspan="2"><table width="654" border="0" cellpadding="0" cellspacing="0" class="tablacompleta">
+      <tr>
+        <td width="126" rowspan="3" valign="top"><img src="../imagenes/60anios.png" alt="dd" width="117" height="80" /></td>
+        <td width="259" valign="top">Nombre del Documento: Formato para &nbsp;Solicitud de Mantenimiento Correctivo</td>
+        <td width="145" valign="top">&nbsp;C&oacute;digo:<br />
+&nbsp;SNEST/D-AD-PO-001-02</td>
+        <td width="120" rowspan="3" valign="top"><div align="center"><img src="FormTipo1_clip_image004.jpg" width="108" height="99" /></div></td>
+     </tr>
+      <tr>
+        <td width="259" rowspan="2" valign="top">&nbsp;Referencia al punto de la norma ISO &nbsp;9001:2008 6.3, 6.4</td>
+        <td width="145" valign="top">Revisi&oacute;n: 3 </td>
+        </tr>
+      <tr>
+        <td width="145" height="52" valign="top">&nbsp;P&aacute;gina 1 de 1 </td>
+        </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td colspan="2"><h4>&nbsp;</h4>
+      <p align="center"><strong>SOLICITUD MANTENIMIENTO  CORRECTIVO</strong></p>
+      <br />
+      <table width="298" border="1" align="right" cellpadding="0" cellspacing="0" class="tablacompleta">
+        <!--DWLayoutTable-->
+      <tr>
+        <td width="256" height="25" valign="top">&nbsp;Recursos Materiales y Servicios</td>
+       <td width="38" valign="top"><center><?php if($_SESSION['sol']=='rms'){echo $marca_x;}?></center></div></td>
+      </tr>
+      <tr>
+        <td height="20" valign="top">&nbsp;Mantenimiento de Equipo</td>
+      <td valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      </tr>
+      <tr>
+        <td height="" valign="top">&nbsp;Centro de Computo</td>
+      <td valign="top"> <div><center><?php if($_SESSION['sol']=='cc'){echo $marca_x;}?></center></div></td>
+      </tr>
+    </table>
+      <p>&nbsp;</p>
+        <p>&nbsp;</p>
+           <div>
+        <div align="right">Folio: __<label class="subnegritas"><?php printf("%'03s\n", $folio);?></label>
+          <span class="subnegritas"><?php printf("%'03s\n", $año);?></span>______ </div>
+      </div>
+    </tr>
+  <tr>
+    <td colspan="2" class="tabla"><p><br />
+&nbsp;&Aacute;rea Solicitante: <?php echo $array_area[1];?></p>
+    <p>&nbsp;</p></td>
+  </tr>
+  <tr>
+    <td colspan="2"><br />
+	<table border="0" cellspacing="0" cellpadding="0" width="654" class="tabla">
+      <tr>
+        <td width="720" valign="bottom" class="celdasbajo"><p><strong>&nbsp;</strong></p>
+          <p>&nbsp;Nombre y Firma del Solicitante: 
+                     <?php echo $nom_completo;?></p></td>
+      </tr>
+      <tr>
+        <td width="720" valign="top" class="celdasbajo"><p><strong>&nbsp;</strong></p>
+          <p>&nbsp;Fecha de Elaboraci&oacute;n: <?php echo $fecha_solicitud;?></p></td>
+      </tr>
+      <tr>
+        <td width="720" valign="top" class="celdasbajo"><p>&nbsp;Descripci&oacute;n del servicio solicitado    o falla a reparar: </p></td>
+      </tr>
+      <tr>
+        <td width="720" valign="top" class="celdas"><p><strong>&nbsp;</strong></p>
+          <p><strong> <?php echo $falla;?></strong></p>
+          <p><strong>&nbsp;</strong></p>
+          <p><strong>&nbsp;</strong></p>
+          <p><strong>&nbsp;</strong></p>
+          <p><strong>&nbsp;</strong></p>
+          <p><strong>&nbsp;</strong></p>
+          <p><strong>&nbsp;</strong></p>
+		  <p><strong>&nbsp;</strong></p>
+		  <p><strong>&nbsp;</strong></p>
+		</td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td colspan="2"><p>&nbsp;c.c.p. Departamento de Planeaci&oacute;n  Programaci&oacute;n y Presupuestaci&oacute;n&nbsp; y/o &aacute;rea  equivalente<br />
+&nbsp;c.c.p. &Aacute;rea Solicitante.</p>
+    <br /></td>
+  </tr>
+  <tr>
+    <td width="428">
+    <div align="left"><strong>&nbsp;SNEST/D-AD-PO-001-02</strong></div></td>
+    <td width="214"><div align="right"><strong>Rev. 3 &nbsp;</strong></div></td>
+  </tr>
+</table>
+</form>
+</center>
+</body>
+</html>

@@ -1,0 +1,4 @@
+[18-Apr-2018 21:08:18 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/itsvaedu/intranet.itsva.edu.mx/mantenimiento/sesion/proteccion.php on line 2
+[18-Apr-2018 21:08:18 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/itsvaedu/intranet.itsva.edu.mx/conexion/enchufarsolicitudes.php on line 8
+[18-Apr-2018 21:08:18 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/itsvaedu/intranet.itsva.edu.mx/conexion/enchufarusuarios.php on line 8
+[18-Apr-2018 21:08:18 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/itsvaedu/intranet.itsva.edu.mx/conexion/enchufarusuarios.php on line 8

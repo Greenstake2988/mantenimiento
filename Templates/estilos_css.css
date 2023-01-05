@@ -1,0 +1,165 @@
+.tabla {
+	background-color: #EFD1A7;
+	border: thin double #660000;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: bold;
+	color: #660000;
+}
+
+.tablacontenedora {
+        font-family: Arial, Helvetica, sans-serif;
+	background-color: #EFE4D2;
+	border: thin double #66421E;
+	color: #660000;
+	font-size: 13px;
+	font-style: normal;
+	color: #660000;
+}
+
+a:link {
+	color: #660000;
+}
+a:hover {
+	color: #E6C132;
+}
+a:visited {
+	color: #999999;
+}
+
+.cuadrito {
+	background-color: #EFE4D2;
+	height: 100px;
+	width: 300px;
+	border: thin solid #660000;
+}
+img{ 
+border:0} 
+
+.bordetablapunteado{ 
+border-style: dotted; 
+border-width: 1px; 
+border-color: 660033; 
+background-color: #EFE4D2; 
+font-family: verdana, arial; 
+font-size: 10pt; 
+
+	font-style: normal;
+	font-weight: bold;
+	color: #660000;
+} 
+
+/*CSS Digg style pagination*/
+	div.pagination {
+		padding: 3px;
+		margin: 3px;
+		text-align:center;
+		background-color: #EFE4D2;
+	}
+	
+	div.pagination a {
+		padding: 2px 5px 2px 5px;
+		margin: 2px;
+		border: 2px solid #AAAADD;
+		
+		text-decoration: none; /* no underline */
+		color: #000099;
+	}
+	div.pagination a:hover, div.digg a:active {
+		border: 1px solid #000099;
+
+		color: #000;
+	}
+	div.pagination span.current {
+		padding: 2px 5px 2px 5px;
+		margin: 2px;
+		border: 1px solid #000099;
+		
+		font-weight: bold;
+		background-color: #000099;
+		color: #FFF;
+	}
+	div.pagination span.disabled {
+		padding: 2px 5px 2px 5px;
+		margin: 2px;
+		border: 1px solid #EEE;
+	
+		color: #DDD;
+	}
+.inicial_mayuscula {
+text-transform:capitalize;
+font: 150% sans-serif;
+}
+input{
+-moz-border-radius: 15px;
+background-color : #EFE4D2;
+border : 1px solid #000000;
+font-family : "Courier New", Courier, monospace;
+font-size : 12px;
+padding-left : 7px;
+padding-right : 7px;
+}
+
+.Estilo3 {color: #000033}
+#Layer1 {
+	position:absolute;
+	width:246px;
+	height:146px;
+	z-index:1;
+	left: 354px;
+	top: 191px;
+	background-image: url(imagenes/images%5B6%5D.jpg);
+	background-color: #CCCCCC;
+	visibility: inherit;
+	overflow: auto;
+}
+#Layer2 {
+	position:absolute;
+	width:122px;
+	height:53px;
+	z-index:1;
+	left: 278px;
+	top: 158px;
+}
+#Layer3 {
+	position:absolute;
+	width:200px;
+	height:115px;
+	z-index:2;
+	left: 587px;
+	top: 7px;
+}
+#Layer4 {
+	position:absolute;
+	width:70px;
+	height:74px;
+	z-index:3;
+	left: 726px;
+	top: 109px;
+}
+#Layer5 {
+	position:absolute;
+	width:449px;
+	height:18px;
+	z-index:4;
+	left: 279px;
+	top: 106px;
+}
+.Estilo7 {
+	color: #FFFFFF;
+	font-weight: bold;
+}
+.titulos {
+color:#660000;
+text-align:center;
+font-size:24px;
+text-transform:capitalize;
+}
+
+.titulos_extras {
+color:#660000;
+text-align:center;
+font-size:18px;
+font-weight:bold;
+}

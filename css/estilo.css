@@ -1,0 +1,50 @@
+@charset "utf-8";
+/* CSS Document */
+
+.fondotabla {
+margin: auto;
+background-color: #996;
+background-repeat: no-repeat;
+}
+
+table, th, td {
+	border: 1px  solid #D4E0EEs;
+	border-collapse: collapse;
+	font-family: "Trebuchet MS", Arial, sans-serif;
+	color: #B88C07:inherit;
+				}
+
+.caption {
+	font-size: 150%;
+	font-weight: bold;
+	margin: 5px;
+		}
+
+td, th {
+	padding: 4px;
+}
+
+.thead th {
+	text-align: center;
+	background: #E6EDF5;
+	color: #4F76A3;
+	font-size: 100% !important;
+}
+
+tbody th {
+	font-weight: bold;
+}
+
+tbody tr {
+	 background: #EFF1F8;
+	  }
+
+tbody tr.odd { 
+background: #F7F9FC;
+ 
+}
+
+
+tfoot th, tfoot td {
+	font-size: 85%;
+}

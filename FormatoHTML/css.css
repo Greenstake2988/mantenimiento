@@ -1,0 +1,68 @@
+.tabla {
+	border: thin solid #000000;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	color: #000000;
+}
+
+.celdasbajo
+	{
+	border-bottom: thin solid #000000;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	color: #000000;
+	
+	}
+	
+.celdaderecha
+	{
+	border-right: thin solid #000000;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	color: #000000;
+	
+	}
+.celdasbajo2
+	{
+	border-bottom: thin solid #000000;
+	border-right: thin solid #000000;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	color: #000000;
+	
+	}
+.tablacompleta 
+	{
+	border: thin #000000;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	color: #000000;
+	}
+.tablacompleta td
+	{
+	 border: 1px solid #000000;
+	 font-family: Arial, Helvetica, sans-serif;
+	 font-size: 12px;
+	 font-style: normal;
+	 font-weight: bold;
+	 color: #000000;
+	}
+.subnegritas
+	{
+		text-decoration:underline;
+		font-weight: bold;
+	}
+	.justifyText{
+ text-align : justify;
+ font-size-adjust:inherit;
+ }
