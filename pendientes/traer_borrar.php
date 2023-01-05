@@ -76,7 +76,7 @@ tinyMCE.init({
 		//if (mysql_num_rows($consulta)!=0){echo "no hay datos";}
 		//valido la busqueda para centro de computo
 		if($_SESSION['sol']=='cc'){	
-		$consulta=mysql_query( "SELECT folio,anio_folio,tipo_manto,servicio,fecha_realizacion,trabajo_realizado,materiales_usados from orden_mantenimiento where folio='$buscar_folio' and anio_folio='$buscar_anio' and solicita_a='cc'",$enchufarsolicitudes);
+		$consulta=mysql_query( "SELECT * from orden_mantenimiento where folio='$buscar_folio' and anio_folio='$buscar_anio' and solicita_a='cc'",$enchufarsolicitudes);
 	
 	if (mysql_num_rows($consulta)==''){
 	header('refresh: 2; url=form_busca_borrar.php');
