@@ -9,16 +9,7 @@ session_start();
 <title></title>
 <link href="css.css" rel="stylesheet" type="text/css" />
 </head>
-<script> 
-function window.onbeforeprint(){ 
-noprint.style.visibility = 'hidden'; 
-noprint.style.position = 'absolute';
-}
-function window.onafterprint(){ 
-noprint.style.visibility = 'visible'; 
-noprint.style.position = 'relative'; 
-}
-</script> 
+
 
 <body>
 <form name="formato" method="post">
