@@ -207,7 +207,7 @@ while($folio = mysql_fetch_array($consulta1)){
           <p>
             <label></label>
           
-          <p align="center" class="textpie">Descripci&oacute;n del Servicio Solicitado o Falla a Reparar:</p>
+          <p align="center" class="textpie">Trabajo realizado y Materiales utilizados :</p>
           <p>
 		  <div align="center">
         <textarea name="falla" cols="50" rows="5" ><?php echo $trabajo_realizado;?></textarea>
