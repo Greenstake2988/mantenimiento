@@ -156,8 +156,8 @@ while($folio = mysql_fetch_array($consulta1)){
               <td>&nbsp;</td>
               <td>&nbsp;</td>
               <td><div align="center" class="Estilo2">FOLIO</div></td>
-              <td><input name="folio" type="text"  value="<?php echo $num_folio;?>" size="4" readonly="" />
-              <input name="ano" type="text"  value="<?php echo $anio_folio;?>" size="2" readonly="" />
+              <td><input name="folio" type="text"  value="<?php echo $num_folio;?>" size="4" readonly />
+              <input name="ano" type="text"  value="<?php echo $anio_folio;?>" size="2" readonly />
               <input name="folio2" type="hidden"  value="<?php echo $num_folio;?>" size="2" readonly="" />
               <input name="ano2" type="hidden"  value="<?php echo $a&ntilde;o_folio;?>" size="2" readonly="" /></td>
             </tr>
