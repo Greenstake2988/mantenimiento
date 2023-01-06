@@ -35,7 +35,7 @@ if($_SESSION['sol']=='cc')
             $borrar="Delete FROM orden_mantenimiento WHERE where folio='$folio2' and anio_folio='$anio'";
             $resultado=mysql_query($modificar,$enchufarsolicitudes);
             $resultado2=mysql_query($borrar,$enchufarsolicitudes);
-            if($resultado)
+            if($resultado and $resultado2)
                     {
                             mysql_affected_rows();
 
