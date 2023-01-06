@@ -210,7 +210,7 @@ while($folio = mysql_fetch_array($consulta1)){
           </p>
           <table width="247" border="0" align="center">
             <tr>
-              <td> <input type="submit" name="Submit" value="Borrar" ></input>
+              <td> <input type="submit" name="Submit" value="Borrar" align="center" ></input>
               </td>
             </tr>
           </table>
