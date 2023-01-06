@@ -38,6 +38,7 @@ if($_SESSION['sol']=='cc')
             $resultado=mysql_query($modificar,$enchufarsolicitudes);
             if($resultado)
                     {
+                            echo $resultado;
                             mysql_affected_rows();
 
                     }
