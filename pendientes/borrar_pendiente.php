@@ -27,7 +27,7 @@ $falla= $_POST['falla'];
 $id_area=$_POST['id_area'];
 $id_usuario=$_POST['id_usuario'];
 
-include("../../../conexion/enchufarsolicitudes.php");
+include("../../conexion/enchufarsolicitudes.php");
 //actualizar para centro de computo
 if($_SESSION['sol']=='cc')
             {
