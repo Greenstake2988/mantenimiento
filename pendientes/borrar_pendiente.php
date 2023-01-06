@@ -53,7 +53,8 @@ if($_SESSION['sol']=='cc')
                     }
  else
 	{
-        $modificar="Update solicitudes Set folio='$folio',anio_folio='$anio',fecha='$fecha_solicitud',id_area='$id_area',id_usuario='$id_usuario',falla_reparar='$falla' where folio='$folio2' and anio_folio='$anio' and solicita_a<>'cc'";
+        # Para El otro bando
+        #$modificar="Update solicitudes Set folio='$folio',anio_folio='$anio',fecha='$fecha_solicitud',id_area='$id_area',id_usuario='$id_usuario',falla_reparar='$falla' where folio='$folio2' and anio_folio='$anio' and solicita_a<>'cc'";
         $resultado=mysql_query($modificar,$enchufarsolicitudes);
         if($resultado)
                 {
