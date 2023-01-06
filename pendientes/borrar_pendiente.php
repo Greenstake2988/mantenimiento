@@ -31,8 +31,7 @@ include("../../../conexion/enchufarsolicitudes.php");
 //actualizar para centro de computo
 if($_SESSION['sol']=='cc')
             {
-            $pendiente = 0;
-            $modificar="Update solicitudes Set pendiente='$pendiente' where folio='$folio2' and anio_folio='$anio' and solicita_a='cc'";
+            $modificar="Update solicitudes Set pendiente=0 where folio='$folio2' and anio_folio='$anio' and solicita_a='cc'";
             $borrar="Delete FROM orden_mantenimiento WHERE where folio='$folio2' and anio_folio='$anio'";
             $resultado=mysql_query($modificar,$enchufarsolicitudes);
             $resultado2=mysql_query($borrar,$enchufarsolicitudes);
