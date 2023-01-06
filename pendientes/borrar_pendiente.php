@@ -31,6 +31,7 @@ include("../../../conexion/enchufarsolicitudes.php");
 //actualizar para centro de computo
 if($_SESSION['sol']=='cc')
             {
+            echo $folio;
             $pendiente = 0;
             $modificar="Update solicitudes Set pendiente='$pendiente', where folio='$folio2' and anio_folio='$anio' and solicita_a='cc'";
             $borrar="Delete FROM orden_mantenimiento WHERE where folio='$folio2' and anio_folio='$anio'";
@@ -74,5 +75,6 @@ if($_SESSION['sol']=='cc')
  
  
  ?>
+ </div>
 </body>
 </html>
