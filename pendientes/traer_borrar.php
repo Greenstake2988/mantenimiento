@@ -192,18 +192,6 @@ while($folio = mysql_fetch_array($consulta1)){
             </tr>
           </table>
 		  <br />
-          <table width="491" border="0" class="tabla" align="center">
-            <tr>
-              <td width="130">Tipo de Servicio : </td>
-              <td width="341"><label>
-                <input type="text" name="area" readonly="" size="45" value="<?php echo $descripcion;?>" />
-              </label></td>
-            </tr>
-            <tr>
-              <td>Asignado a : </td>
-              <td><input name="nombre_completo" type="text" id="nombre_completo" readonly="" value="<?php echo $nombre_completo;?>" size="45" /></td>
-            </tr>
-          </table>
           <p>
             <label></label>
           
